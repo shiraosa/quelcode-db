@@ -16,7 +16,9 @@ CREATE TABLE `join_histories`(
     `chatroom_id` INT(11) NOT NULL,
     `user_id` INT(11) NOT NULL,
     `joined_at` DATETIME NOT NULL,
-    PRIMARY KEY (`chatroom_id`,`user_id`)
+    PRIMARY KEY (`chatroom_id`,`user_id`),
+    FOREIGN KEY (`chatroom_id`) REFERENCES `chatrooms`(`id`),
+    FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)
 );
 
 CREATE TABLE `chats`(
@@ -29,7 +31,10 @@ CREATE TABLE `chats`(
     `created_by` INT(11) NOT NULL,
     `updated_at` DATETIME NOT NUll,
     `updated_by` INT(11) NOT NULL,
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (`id`),
+    FOREIGN KEY (`chatroom_id`) REFERENCES `chatrooms`(`id`),
+    FOREIGN KEY (`created_by`) REFERENCES `users`(`id`),
+    FOREIGN KEY (`updated_by`) REFERENCES `users`(`id`)
 );
 
 CREATE TABLE `tasks`(
@@ -44,7 +49,11 @@ CREATE TABLE `tasks`(
     `created_by` INT(11) NOT NULL,
     `updated_at` DATETIME NOT NUll,
     `updated_by` INT(11) NOT NULL,
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (`id`),
+    FOREIGN KEY (`person_in_charge`) REFERENCES `users`(`id`),
+    FOREIGN KEY (`chatroom_id`) REFERENCES `chatrooms`(`id`),
+    FOREIGN KEY (`created_by`) REFERENCES `users`(`id`),
+    FOREIGN KEY (`updated_by`) REFERENCES `users`(`id`)
 );
 
 CREATE TABLE `chatrooms`(
@@ -58,5 +67,7 @@ CREATE TABLE `chatrooms`(
     `created_by` INT(11) NOT NULL,
     `updated_at` DATETIME NOT NUll,
     `updated_by` INT(11) NOT NULL,
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (`id`),
+    FOREIGN KEY (`created_by`) REFERENCES `users`(`id`),
+    FOREIGN KEY (`updated_by`) REFERENCES `users`(`id`)
 );
