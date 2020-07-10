@@ -22,7 +22,7 @@ CREATE TABLE `join_histories`(
 CREATE TABLE `chats`(
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `content` VARCHAR(1000) NOT NULL,
-    `file` VARCHAR(100),
+    `file_name` VARCHAR(100),
     `chatroom_id` INT(11) NOT NULL,
     `is_deleted` TINYINT(1) DEFAULT 0 NOT NULL,
     `created_at` DATETIME NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE `chatrooms`(
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `room_name` VARCHAR(100) NOT NULL,
     `overview` VARCHAR(1000),
-    `is_attache_file` TINYINT(1) DEFAULT 0 NOT NULL,
+    `is_attached_file` TINYINT(1) DEFAULT 0 NOT NULL,
     `is_direct_chat` TINYINT(1) DEFAULT 0 NOT NULL,
     `is_deleted` TINYINT(1) DEFAULT 0 NOT NULL,
     `created_at` DATETIME NOT NULL,
