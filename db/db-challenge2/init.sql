@@ -60,7 +60,7 @@ CREATE TABLE `chatrooms`(
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `room_name` VARCHAR(100) NOT NULL,
     `overview` VARCHAR(1000),
-    `is_attached_file` TINYINT(1) DEFAULT 0 NOT NULL,
+    `is_unsendable_file` TINYINT(1) DEFAULT 0 NOT NULL,
     `is_direct_chat` TINYINT(1) DEFAULT 0 NOT NULL,
     `is_deleted` TINYINT(1) DEFAULT 0 NOT NULL,
     `created_at` DATETIME NOT NULL,
