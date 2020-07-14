@@ -1,8 +1,5 @@
-INSERT INTO `chats`(`
-content`,`file_name
-`,`chatroom_id`,`is_deleted`,`created_at`,`created_by`,`updated_at`,`updated_by`) 
-VALUES
-('このチャットの注意事項を添付しました。確認してください。','注意事項.pdf',1,0,'2020/04/21 13:11:55',1,'2020/04/21 13:11:55',1),
+INSERT INTO `chats`(`content`,`file_name`,`chatroom_id`,`is_deleted`,`created_at`,`created_by`,`updated_at`,`updated_by`) 
+VALUES('このチャットの注意事項を添付しました。確認してください。','注意事項.pdf',1,0,'2020/04/21 13:11:55',1,'2020/04/21 13:11:55',1),
 ('確認しました',null,1,0,'2020/04/22 16:10:11',2,'2020/04/22 16:10:11',2),
 ('確認しました！',null,1,0,'2020/04/22 17:45:29',3,'2020/04/22 17:45:29',3),
 ('確認しました。',null,1,0,'2020/04/22 18:50:11',4,'2020/04/22 18:50:11',4),
