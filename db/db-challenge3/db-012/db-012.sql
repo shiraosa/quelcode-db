@@ -6,5 +6,5 @@ WHERE id NOT IN(
     FROM join_histories
     WHERE user_id = 1
 )
-AND chatrooms.is_deleted = 0;
+AND is_deleted = 0;
 COMMIT;
